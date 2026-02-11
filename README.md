@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Analytics Dashboard - Power BI Style
 
 A modern, fully-featured analytics dashboard built with React, Vite, and Recharts. Features a distinctive dark theme with vibrant accents, smooth animations, and interactive visualizations.
@@ -237,3 +238,6 @@ This dashboard follows modern design principles:
 ---
 
 Built with ❤️ using React + Vite
+=======
+# Cement-Dashboard-
+>>>>>>> 52f6158880d83420cb2e562204dda00c8fd2e886
