@@ -127,3 +127,29 @@
     font-size: 0.75rem;
   }
 }
+.distributor-name.clickable {
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  display: inline-block;
+}
+
+.distributor-name.clickable::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  transition: width var(--transition-base);
+}
+
+.distributor-name.clickable:hover {
+  color: var(--accent-primary);
+  transform: translateX(4px);
+}
+
+.distributor-name.clickable:hover::after {
+  width: 100%;
+}

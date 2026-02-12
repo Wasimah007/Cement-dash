@@ -1,0 +1,240 @@
+.raw-materials-page {
+  padding: var(--spacing-xl);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-xl);
+  gap: var(--spacing-lg);
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: var(--spacing-xs);
+  background: linear-gradient(135deg, var(--text-primary), var(--accent-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.page-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+/* KPI Grid */
+.rm-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Charts Section */
+.rm-charts-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.chart-container-large {
+  height: 400px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Status Legend */
+.status-legend {
+  display: flex;
+  gap: var(--spacing-md);
+  font-size: 0.75rem;
+  align-items: center;
+}
+
+.status-item {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.status-item.safe {
+  color: var(--accent-success);
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.status-item.warning {
+  color: var(--accent-warning);
+  background: rgba(255, 170, 0, 0.1);
+}
+
+.status-item.critical {
+  color: var(--accent-error);
+  background: rgba(255, 51, 102, 0.1);
+}
+
+/* Status Table */
+.status-table-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.status-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.status-table thead {
+  border-bottom: 2px solid var(--border-color);
+}
+
+.status-table th {
+  text-align: left;
+  padding: var(--spacing-md);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-table td {
+  padding: var(--spacing-md);
+}
+
+.status-row {
+  border-bottom: 1px solid var(--border-color);
+  transition: all var(--transition-base);
+}
+
+.status-row:hover {
+  background: var(--bg-hover);
+}
+
+.status-row:last-child {
+  border-bottom: none;
+}
+
+.material-name {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.stock-value,
+.min-value,
+.diff-value {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.diff-value.positive {
+  color: var(--accent-success);
+}
+
+.diff-value.negative {
+  color: var(--accent-error);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.status-badge.safe {
+  color: var(--accent-success);
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.status-badge.warning {
+  color: var(--accent-warning);
+  background: rgba(255, 170, 0, 0.1);
+}
+
+.status-badge.critical {
+  color: var(--accent-error);
+  background: rgba(255, 51, 102, 0.1);
+}
+
+.status-percent {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 1200px) {
+  .rm-kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .rm-charts-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .raw-materials-page {
+    padding: var(--spacing-lg);
+  }
+  
+  .page-header {
+    flex-direction: column;
+  }
+  
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .page-actions {
+    width: 100%;
+  }
+  
+  .action-btn {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .rm-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .status-legend {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .chart-container-large {
+    height: 300px;
+  }
+  
+  .status-table {
+    font-size: 0.875rem;
+  }
+  
+  .status-table th,
+  .status-table td {
+    padding: var(--spacing-sm);
+  }
+}

@@ -23,7 +23,7 @@ const Dashboard = () => {
         <div>
           <h1>Dashboard Overview</h1>
           <p className="dashboard-subtitle">
-            Welcome back! Here's what's happening with your business today.
+            Welcome back! Here's what's happening with your Cement Plant today.
           </p>
         </div>
         

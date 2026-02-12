@@ -8,45 +8,35 @@ import {
   FileText,
   Settings,
   HelpCircle,
-  Cpu,
-  Zap,
-  Thermometer,
-  Activity,
-  Clipboard,
-  Truck
+  Boxes
 } from 'lucide-react';
 import './Sidebar.css';
 
-const menuItems = [
-  { icon: LayoutDashboard, label: 'Cement Plant Dashboard', active: true },
-  { icon: BarChart3, label: 'Analytics', active: false },
-  { icon: Users, label: 'Suppliers', active: false },
-  { icon: ShoppingCart, label: 'Raw Materials', active: false },
-  { icon: Package, label: 'Raw Mill', active: false },
-  { icon: FileText, label: 'Preheater/Pre calciner', active: false },
-  { icon: Cpu, label: 'Cement Mill', active: false },
-  { icon: Zap, label: 'Coal Mill', active: false },
-  { icon: Thermometer, label: 'Kiln', active: false },
-  { icon: Activity, label: 'Clinker Cooling', active: false },
-  { icon: Clipboard, label: 'Q & C', active: false },
-  { icon: Truck, label: 'Packing and Dispatch', active: false },
-];
+const Sidebar = ({ currentPage, onPageChange }) => {
+  const menuItems = [
+    { icon: LayoutDashboard, label: 'Dashboard', page: 'dashboard' },
+    { icon: Boxes, label: 'Raw Materials', page: 'raw-materials' },
+    { icon: BarChart3, label: 'Analytics', page: 'analytics' },
+    { icon: Users, label: 'Customers', page: 'customers' },
+    { icon: ShoppingCart, label: 'Orders', page: 'orders' },
+    { icon: Package, label: 'Products', page: 'products' },
+    { icon: FileText, label: 'Reports', page: 'reports' },
+  ];
 
-const bottomItems = [
-  { icon: Settings, label: 'Settings' },
-  { icon: HelpCircle, label: 'Help' },
-];
+  const bottomItems = [
+    { icon: Settings, label: 'Settings', page: 'settings' },
+    { icon: HelpCircle, label: 'Help', page: 'help' },
+  ];
 
-const Sidebar = () => {
   return (
     <aside className="sidebar animate-in-left">
       <nav className="sidebar-nav">
-        {/* Scrollable main menu section */}
-        <div className="sidebar-section scrollable">
+        <div className="sidebar-section">
           {menuItems.map((item, index) => (
             <button 
               key={index}
-              className={`sidebar-item ${item.active ? 'active' : ''}`}
+              className={`sidebar-item ${currentPage === item.page ? 'active' : ''}`}
+              onClick={() => onPageChange(item.page)}
             >
               <item.icon size={20} />
               <span>{item.label}</span>
@@ -54,10 +44,13 @@ const Sidebar = () => {
           ))}
         </div>
         
-        {/* Bottom fixed section */}
         <div className="sidebar-section sidebar-bottom">
           {bottomItems.map((item, index) => (
-            <button key={index} className="sidebar-item">
+            <button 
+              key={index} 
+              className="sidebar-item"
+              onClick={() => onPageChange(item.page)}
+            >
               <item.icon size={20} />
               <span>{item.label}</span>
             </button>
